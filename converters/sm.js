@@ -88,7 +88,7 @@ function importSM(smfile, options) {
 
                 // convert bpm into array of objects
 
-                for (x=0; x < BPMarray.length; x++) {
+                for (var x = 0; x < BPMarray.length; x++) {
                     //console.log(BPMarray[x])
                     var currentBPM = BPMarray[x].split("=")
                     //console.log(currentBPM)
@@ -104,7 +104,7 @@ function importSM(smfile, options) {
                 var runningTime = 0; // This is our current time.
                 var runningBeat = 0; // this is our current beat.
 
-                for (x=0; x < BPMarray.length; x++) {
+                for (var x = 0; x < BPMarray.length; x++) {
 
                     // Add the amount of beats since last BPM change to our clock, in actual time.
                     // current time + currentbpm * beats that have passed since the last check.

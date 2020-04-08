@@ -82,9 +82,59 @@ function _generate(file){
 	saveAs(blob, songFile.name + ".srtb");
 }
 
+// Run file generation on button hit.
+
 function output(){
 	var file = document.getElementById("input").files[0]
 	var reader = new FileReader()
 	reader.onload = _generate
+	reader.readAsText(file)
+}
+
+// Generate preview
+
+function _updatePreview(file){
+
+	// set up file options
+	
+	var options = getOptions()
+
+	// funnel through parsers
+
+	var songFile = convertFile(document.getElementById('input').files[0].name.trim(), file.target.result, options)
+
+	console.log(songFile)
+
+	// now to update the fields
+
+	document.getElementById('currentTitle').innerHTML = songFile.name
+	document.getElementById('currentSubtitle').innerHTML = songFile.subtitle
+	document.getElementById('currentArtist').innerHTML = songFile.artist
+	document.getElementById('currentOffset').innerHTML = songFile.offset + "s"
+
+	var BPMOutput = ""
+
+	for (var i = 1; i < songFile.bpmChanges.length; i++) {
+		BPMOutput = BPMOutput + '<br>Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm"
+	}
+
+	document.getElementById('currentBPMs').innerHTML = BPMOutput
+
+	var cueOutput = ""
+
+	for (var i = 1; i < songFile.cues.length; i++) {
+		BPMoutput = BPMoutput + '<br>' + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s"
+	}
+
+	document.getElementById('currentCues').innerHTML = cueOutput
+
+}
+
+// Run preview generation on file change
+
+function fileChange(){
+	var file = document.getElementById("input").files[0]
+	var reader = new FileReader()
+	reader.onload = _updatePreview
 	reader.readAsText(file)
 }
