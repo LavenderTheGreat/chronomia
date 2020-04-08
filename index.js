@@ -115,7 +115,7 @@ function _updatePreview(file){
 	var BPMOutput = ""
 
 	for (var i = 0; i < songFile.bpmChanges.length; i++) {
-		BPMOutput = BPMOutput + '<br>Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm"
+		BPMOutput = BPMOutput + 'Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm" + '<br>'
 	}
 
 	document.getElementById('currentBPMs').innerHTML = BPMOutput
@@ -123,7 +123,7 @@ function _updatePreview(file){
 	var cueOutput = ""
 
 	for (var i = 0; i < songFile.cues.length; i++) {
-		BPMoutput = BPMoutput + '<br>' + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s"
+		BPMoutput = BPMoutput + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s" + '<br>'
 	}
 
 	document.getElementById('currentCues').innerHTML = cueOutput
