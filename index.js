@@ -114,7 +114,7 @@ function _updatePreview(file){
 
 	var BPMOutput = ""
 
-	for (var i = 1; i < songFile.bpmChanges.length; i++) {
+	for (var i = 0; i < songFile.bpmChanges.length; i++) {
 		BPMOutput = BPMOutput + '<br>Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm"
 	}
 
@@ -122,7 +122,7 @@ function _updatePreview(file){
 
 	var cueOutput = ""
 
-	for (var i = 1; i < songFile.cues.length; i++) {
+	for (var i = 0; i < songFile.cues.length; i++) {
 		BPMoutput = BPMoutput + '<br>' + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s"
 	}
 
