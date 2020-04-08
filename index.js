@@ -16,13 +16,8 @@ function checkboxValue(id){
 	return (document.getElementById(id).checked == true)
 }
 
-function _generate(file){
-
-	var songFile = {}
-
-	// set up file options
-	
-	var options = {
+function getOptions(){
+	return {
 		bpm: {
 			base: checkboxValue("bpm_base"), // used in export
 			changes: checkboxValue("bpm_changes"), // used in export
@@ -55,17 +50,35 @@ function _generate(file){
 			subtitle: checkboxValue("meta_subtitle") // used in export
 		}
 	}
+}
 
-	// funnel through parsers
+function convertFile(filename, file, options){
+	
+	var songFile = {}
 
-	switch(endSwitch(document.getElementById('input').files[0].name.trim(), ['.osu', '.ksm', '.bms', '.sm'])){ // check file type, use that parser.
+	switch(endSwitch(filename, ['.osu', '.ksm', '.bms', '.sm'])){ // check file type, use that parser.
 
 		case '.sm':
 			console.log("IS SM")
-			songFile = importSM(file.target.result, options);
+			songFile = importSM(file, options);
 			break;
 
 	}
+
+	return songFile
+}
+
+// Generate file
+
+function _generate(file){
+
+	// set up file options
+	
+	var options = getOptions()
+
+	// funnel through parsers
+
+	var songFile = convertFile(document.getElementById('input').files[0].name.trim(), file.target.result, options)
 
 	console.log(songFile)
 
