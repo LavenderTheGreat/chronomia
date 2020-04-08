@@ -69,7 +69,7 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Be-Music S
 
 #### Core
 
-- [ ] BPM conversion
+- [x] BPM conversion
 
 #### Notes
 
@@ -77,6 +77,6 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Be-Music S
 
 #### Metadata
 
-- [ ] TITLE to Song Name
-- [ ] ARTIST to Artist
-- [ ] GENRE to Subtitle
+- [x] TITLE to Song Name
+- [x] ARTIST to Artist
+- [x] SUBTITLE to Subtitle
