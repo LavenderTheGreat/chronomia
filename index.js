@@ -1,9 +1,5 @@
 // https://stackoverflow.com/questions/47164675/convert-float-to-32bit-hex-string-in-javascript
 
-// shorthand for finding variables in the attribute list
-
-console.log(importSM)
-
 function endSwitch(string, options){
     for (i = 0; i < options.length; i++) {
         if (string.endsWith(options[i])) {
@@ -86,19 +82,7 @@ function _generate(file){
 	saveAs(blob, songFile.name + ".srtb");
 }
 
-function _fail(){
-	console.log("FAIL")
-}
-
 function output(){
-
-	//console.log(songFile)
-
-	//console.log(toSRTB(songFile))
-
-	//saveAs(blob, "custom.srtb");
-
-	//console.log("BUTTON")
 	var file = document.getElementById("input").files[0]
 	var reader = new FileReader()
 	reader.onload = _generate
