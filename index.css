@@ -1,0 +1,25 @@
+body>.container{
+	max-width:550px;
+	min-height: 100vh;
+}
+
+body{
+	background-image: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%), url("bg.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+
+.blur{
+	position:absolute;
+	margin: 0px;
+	padding: 0px;
+	width: 100vw;
+	min-height:100vh;
+	height: 100%;
+	backdrop-filter: blur(1vw);
+	z-index: -100;
+}
+
+.smalltext{
+	font-size: 1.2rem
+}

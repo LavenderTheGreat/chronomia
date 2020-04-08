@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Chronomia - From one to [ A N O T H E R ]</title>
+		<link rel="stylesheet" href="https://unpkg.com/chota@latest">
+		<link rel="stylesheet" href="https://anydir.github.io/styles/index.css">
+		<link rel="stylesheet" href="index.css">
+		<script src="converters/srtb.js" type="text/javascript"></script>
+		<script src="converters/sm.js" type="text/javascript"></script>
+		<script src="index.js" type="text/javascript"></script>
+		<script src="FileSaver.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!--<div class="row">
+				<div class="col-12" style="font-size: 10rem; text-align:center;">▽</div>
+			</div>-->
+			<div class="row">
+				<div style="height:24px;"></div>
+			</div>
+			<div class="row">
+				<div class="col-12 anydir-logo">Chronomia</div>
+			</div>
+			<div class="row">
+				<div class="col-12" style="text-align:center"><div class="djh-main">From one to [ A N O T H E R ]</div><br>A tool for converting bpm changes and similar between games.</div>
+			</div>
+			
+			<!--  -->
+			<div class="row djh-main">
+				<div class="col-12">
+					<br>
+					Can convert timings from SM and Osu files to SRTB files required for Spin Rhythm XD, at least for now. 
+					<br>
+					<br>
+					Please check out the <a href="https://github.com/LavenderTheGreat/chronomia/blob/master/README.md">progress tracker!</a>
+					<br>
+					<br>
+					<div class="smalltext" style="text-align:center"><i>Need help? <a href="https://discordapp.com/invite/j8g2gkF"><b>Join the SpinSha.re Discord!</b></a></i></div>
+					<br>
+					<br>
+					<div style="text-align:center"><b>File to convert...</b></div>
+					<br>
+					<input type="file" id="input" name="input" accept="text/srtb">
+					<br>
+				</div>
+			</div>
+			
+			<!-- Global Attributes Editor -->
+			<div class="row djh-main">
+				<div class="col-12">
+
+					<!-- In-game -->
+
+					<h1>Configuration</h1>
+					
+					<h3>BPM</h3>
+					<input type="checkbox" id="bpm_base" checked>
+					Convert base BPM.
+					<br>
+					<br>
+
+					<input type="checkbox" id="bpm_changes" checked>
+					Convert BPM changes.
+					<br>
+					<br>
+
+					<input type="checkbox" id="bpm_offset" checked>
+					Attempt conversion of offset markers.
+					<br>
+					<br>
+					
+					<br>
+					<h3>Cue Points</h3>
+					<input type="checkbox" id="cue_osu_bookmark" checked>
+					Convert <b>Osu!</b> editor bookmarks to cue points. 
+					<br>
+					<br>
+
+					<input type="checkbox" id="cue_osu_break" checked>
+					Convert <b>Osu!</b> break points to cue points.
+					<br>
+					<br>
+					
+					<br>
+					<h3>Notes</h3>
+					<input type="checkbox" id="notes_base">
+					Attempt to convert notes to positions in Spin Rhythm XD.
+					<br>
+					<br>
+					
+					<br>
+					<h4>Game-specific</h4>
+
+					<input type="checkbox" id="notes_ksm_fx_l">
+					Attempt to convert <b>K-Shoot Mania</b> FX-L notes to beats/beat-holds. Can conflict with FX-R conversion.
+					<br>
+					<br>
+
+					<input type="checkbox" id="notes_ksm_fx_r">
+					Attempt to convert <b>K-Shoot Mania</b> FX-R notes to beats/beat-holds. Can conflict with FX-L conversion.
+					<br>
+					<br>
+
+					<input type="checkbox" id="notes_ksm_vol_l">
+					Attempt to convert <b>K-Shoot Mania</b> VOL-L notes to slides. Can conflict with VOL-R conversion.
+					<br>
+					<br>
+
+					<input type="checkbox" id="notes_ksm_vol_r">
+					Attempt to convert <b>K-Shoot Mania</b> VOL-R notes to slides. Can conflict with VOL-R conversion.
+					<br>
+					<br>
+
+					<input type="checkbox" id="notes_osu_slider">
+					Attempt to convert <b>Osu!</b> sliders to slides.
+					<br>
+					<br>
+
+					<input type="checkbox" id="notes_bms_scratch">
+					Attempt to convert <b>BMS</b> scratch notes to beats and beat-holds.
+					<br>
+					<br>
+					
+					<br>
+					<h3>Metadata</h3>
+
+					<input type="checkbox" id="meta_title" checked>
+					Attempt to convert titles. Without this, charts will be named CHRN and their respective Unix timestamp.
+					<br>
+					<br>
+
+					<input type="checkbox" id="meta_artist" checked>
+					Attempt to convert artists.
+					<br>
+					<br>
+
+					<input type="checkbox" id="meta_subtitle" checked>
+					Attempt to convert subtitles. For <b>BMS</b> charts this is the genre.
+					<br>
+					<br>
+
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12" style="text-align:center">
+					<br>
+					
+					<b>Select an output:</b>
+					<br><br>
+
+					<select id="output">
+						<option value="SRTB">Spin Rhythm XD</option>
+					</select>
+					<br>
+
+					<button type="button" onclick="output()">Generate</button>
+					<br><br>
+					<div class="smalltext"><i>Chronomia has been made possible due to the efforts of: 
+						<a href="https://twitter.com/lavendertgreat"><b>Lavenfurr (Website creator)</b></a>
+					</i>
+					</i>
+
+					<br><br>
+					<i>Chronomia uses the following technology: 
+						<a href="https://github.com/jenil/chota"><b>Chota (For CSS)</b></a>, 
+						<a href="https://github.com/eligrey/FileSaver.js/pull/629"><b>FileSaver.js (E-train-liu PR, for downloading)</b></a>,
+						<a href="https://unpkg.com"><b>UnPKG</b></a> and 
+						<a href="https://cdnjs.com"><b>cdnJS</b></a>
+						
+					</i>
+
+					<br><br>
+					<i>The licenses for this technology can be found at  
+						<a href="https://github.com/lavenderthegreat/chronomia/licences"><b>chronomia/licences</b></a>
+					</i>
+
+					<br><br>
+					<i>Join us on GitHub! 
+						<a href="https://github.com/lavenderthegreat/chronomia/"><b>lavenderthegreat/chronomia</b></a>
+					</i>
+					
+					<br><br>
+					<i>References used for implementations: 
+						<a href="https://github.com/stepmania/stepmania/wiki/sm"><b>SM official documentation</b></a> and 
+						<a href="http://bm98.yaneu.com/bm98/bmsformat.html"><b>BM98 documentation</b></a>
+						
+					</i>
+
+					<br><br>
+					<i>Spin Rhythm is copyright (C) 2020 Super Spin Digital.</i>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
