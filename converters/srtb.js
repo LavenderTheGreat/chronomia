@@ -209,8 +209,12 @@ function toSRTB(song, options) {
     for (var i = 0; i < song.bpmChanges.length; i++) {
         objects.clip.bpmMarkers[i] = {
             beatLength: 60/song.bpmChanges[i].bpm,
-            clipTime: song.bpmChanges[i].absolute - song.offset,
+            clipTime: song.bpmChanges[i].absolute,
             type: 0
+        }
+
+        if (options.bpm.offset){
+            objects.clip.bpmMarkers[i].clip -= song.offset 
         }
 
         // end it early if they only want base bpm
