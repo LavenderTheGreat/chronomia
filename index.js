@@ -116,7 +116,7 @@ function _updatePreview(file){
 
 	for (var i = 0; i < songFile.bpmChanges.length; i++) {
 		if (songFile.bpmChanges[i].bpm < 0) {
-			document.getElementById('currentWarnings').innerHTML = document.getElementById('currentWarnings').innerHTML + '<b>Negative BPMS will cause errors!</b> Negative BPM: Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm" + '<br>'
+			document.getElementById('currentWarnings').innerHTML = document.getElementById('currentWarnings').innerHTML + '<b>Negative BPMS will cause errors!</b> Negative BPM: Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm" + '<br><br>'
 		}
 		BPMOutput = BPMOutput + 'Beat #' + songFile.bpmChanges[i].beat + " (" + songFile.bpmChanges[i].absolute + "s) - " + songFile.bpmChanges[i].bpm + "bpm" + '<br>'
 	}
