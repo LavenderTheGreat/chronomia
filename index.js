@@ -52,13 +52,17 @@ function convertFile(filename, file, options){
 	
 	var songFile = {}
 
-	switch(endSwitch(filename, ['.osu', '.ksm', '.bms', '.sm'])){ // check file type, use that parser.
+	switch(endSwitch(filename, ['.osu', '.ksm', '.bms', '.sm', '.chart'])){ // check file type, use that parser.
 
 		case '.sm':
 			console.log("IS SM")
 			songFile = importSM(file, options);
 			break;
 
+		case '.chart':
+			console.log("IS CHART");
+			songFile = importChart(file, options);
+			break;
 	}
 
 	return songFile
