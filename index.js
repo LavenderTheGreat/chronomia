@@ -130,7 +130,7 @@ function _updatePreview(file){
 	var cueOutput = ""
 
 	for (var i = 0; i < songFile.cues.length; i++) {
-		BPMoutput = BPMoutput + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s" + '<br>'
+		cueOutput = cueOutput + songFile.cues[i].name + " - " + songFile.cues[i].absolute + "s" + '<br>'
 	}
 
 	document.getElementById('currentCues').innerHTML = cueOutput
