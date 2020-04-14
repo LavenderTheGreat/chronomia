@@ -1,6 +1,6 @@
 # Chronomia
 ### A timing conversion tool for Spin Rhythm XD.
-Chronomia is a tool to convert BPM layouts and other tools from Osu!, Be-Music Source, K-Shoot Mania and Stepmania into SRTB files for use with Spin Rhythm.
+Chronomia is a tool to convert BPM layouts and other tools from Osu!, Clone Hero, Be-Music Source, K-Shoot Mania and Stepmania into SRTB files for use with Spin Rhythm.
 
 ## Features
 
