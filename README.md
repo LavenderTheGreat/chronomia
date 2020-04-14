@@ -168,10 +168,11 @@ You should then process the file according to the options and return an object w
     cues:[ // Array of cues/bookmarks/labels
       {
         name: string, // Name associated with it
-        time: number // Absolute time it occurs
+        absolute: number // Absolute time it occurs
       }
     ]
-}```
+}
+```
 
 You can then add your converter to the case list at https://github.com/LavenderTheGreat/chronomia/blob/master/index.js#L55 and the appropriate function to load below.
 
