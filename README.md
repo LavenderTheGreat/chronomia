@@ -4,16 +4,16 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Clone Hero
 
 ## Features
 
-### Osu!
+### Osu! (Osu)
 
 #### Core
 
-- [ ] BPM conversion
+- [x] BPM conversion
 
 #### Cue points
 
-- [ ] Editor bookmarks to cue points
-- [ ] Break points to cue points
+- [x] Editor bookmarks to cue points
+- [x] Break points to cue points
 
 #### Notes
 
@@ -26,11 +26,11 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Clone Hero
 
 #### Metadata
 
-- [ ] Title to Song Name
-- [ ] Artist to Artist
-- [ ] Source to Subtitle
+- [x] Title to Song Name
+- [x] Artist to Artist
+- [x] Source to Subtitle
 
-### Be-Music Source / BME / PMS
+### Be-Music Source / BME / PMS (BMS, BME, PMS)
 
 #### Core
 
@@ -46,7 +46,7 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Clone Hero
 - [ ] ARTIST to Artist
 - [ ] GENRE to Subtitle
 
-### K-Shoot Mania
+### K-Shoot Mania (KSM)
 
 #### Core
 
@@ -65,7 +65,7 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Clone Hero
 - [ ] ARTIST to Artist
 - [ ] ILLUS to Subtitle
 
-### Stepmania
+### Stepmania (SM)
 
 #### Core
 
