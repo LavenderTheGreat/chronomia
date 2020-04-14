@@ -150,6 +150,26 @@ function importOsu(osufile, options) {
         console.log("BPM Change at: " + runningTime + "s / Beat number: " + runningBeat + " - New BPM: " + runningBPM)
     };
 
+    // Add editor bookmark cues
+    if (options.cue.osu.bookmark && songOsu.editor.Bookmarks) {
+        var bookmarks = songOsu.editor.Bookmarks.split(",")
+        for (var x = 0; x < bookmarks.length; x++) {
+            song.cues.push({name:"Editor Bookmark", absolute:parseFloat(bookmarks[x].trim()) / 1000})
+        }
+    }
+
+    // Add break cues
+    if (options.cue.osu.break && songOsu.events) {
+        console.log("Breaks!")
+        for (var x = 0; x < songOsu.events.length; x++) {
+            console.log(songOsu.events)
+            if (songOsu.events[x][0] == "2" || songOsu.events[x][0] == "Break") {
+                song.cues.push({name:"Break: Start", absolute:parseFloat(songOsu.events[x][1].trim()) / 1000})
+                song.cues.push({name:"Break: End", absolute:parseFloat(songOsu.events[x][2].trim()) / 1000})
+            }
+        }
+    }
+
     song.bpmChanges = BPMs;
 
     song.bpm = BPMs[0];
