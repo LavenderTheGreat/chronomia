@@ -81,6 +81,22 @@ Chronomia is a tool to convert BPM layouts and other tools from Osu!, Be-Music S
 - [x] ARTIST to Artist
 - [x] SUBTITLE to Subtitle
 
+
+### Clone Hero (Chart)
+
+#### Core
+
+- [x] BPM conversion
+
+#### Notes
+
+- [ ] Notes to matches
+
+#### Metadata
+
+- [x] Song Name
+- [x] Artist
+
 # Contributing
 
 If you have knowledge of a common rhythm game format, contribute! We recommend looking at the current importers for what the format expected from an importer is. You can see these in the SM and Chart implementations.
