@@ -160,9 +160,7 @@ function importOsu(osufile, options) {
 
     // Add break cues
     if (options.cue.osu.break && songOsu.events) {
-        console.log("Breaks!")
         for (var x = 0; x < songOsu.events.length; x++) {
-            console.log(songOsu.events)
             if (songOsu.events[x][0] == "2" || songOsu.events[x][0] == "Break") {
                 song.cues.push({name:"Break: Start", absolute:parseFloat(songOsu.events[x][1].trim()) / 1000})
                 song.cues.push({name:"Break: End", absolute:parseFloat(songOsu.events[x][2].trim()) / 1000})
@@ -175,8 +173,6 @@ function importOsu(osufile, options) {
     song.bpm = BPMs[0];
 
     console.log(songOsu)
-
-    console.log(song)
 
     return song
 }
