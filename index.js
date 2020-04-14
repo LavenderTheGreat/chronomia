@@ -1,4 +1,4 @@
-// https://stackoverflow.com/questions/47164675/convert-float-to-32bit-hex-string-in-javascript
+// Switch case tool for switching based on what a string ends with.
 
 function endSwitch(string, options){
     for (i = 0; i < options.length; i++) {
@@ -8,9 +8,13 @@ function endSwitch(string, options){
     }
 };
 
+// Get checkbox values because they're weird
+
 function checkboxValue(id){
 	return (document.getElementById(id).checked == true)
 }
+
+// Generate options
 
 function getOptions(){
 	return {
@@ -62,6 +66,11 @@ function convertFile(filename, file, options){
 		case '.chart':
 			console.log("IS CHART");
 			songFile = importChart(file, options);
+			break;
+
+		case '.osu':
+			console.log("IS OSU");
+			songFile = importOsu(file, options);
 			break;
 	}
 
